@@ -1,0 +1,16 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+  <p><%= @restaurant.address %></p>
+  <p><%= @restaurant.phone_number %></p>
+  <p><%= @restaurant.category %></p>
+  <%= link_to "Back to Restaurants",
+              restaurants_path
+              %>
+  <%= render :partial => "shared/review/form" %>
+  <h2>All reviews (<%= "#{@restaurant.reviews.count}" %>)</h2>
+  <hr>
+  <% @restaurant.reviews.each do |review| %>
+    <p><%= review.rating %>/5 <%= review.content %></p>
+    <hr>
+  <% end %>
+</div>
