@@ -1,0 +1,16 @@
+<div class="col">
+  <div class="card">
+    <img src=<%= "https://source.unsplash.com/random/500x500?sig=#{rand(1..100)}" %> class="card-img-top" alt="">
+    <div class="card-body bg-light">
+      <h5 class="card-title"><%= link_to restaurant.name,
+                                         restaurant_path(restaurant)
+                                         %>
+      </h5>
+      <p class="card-text"><%= restaurant.category %></p>
+      <p> <%= link_to "See all #{restaurant.reviews.count} review(s)",
+                      restaurant_reviews_path(restaurant)
+                      %>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,19 +1,14 @@
-<div class="container">
-  <h1>All Restaurants</h1>
+<nav class="navbar bg-dark sticky-top px-3">
+  <h1 class="text-light">All Restaurants</h1>
   <%= link_to "Add new restaurant",
-              new_restaurant_path
+              new_restaurant_path,
+              class: "btn btn-primary"
               %>
-  <% @restaurants.each do |restaurant| %>
-    <h2>
-      <%= link_to restaurant.name,
-                  restaurant_path(restaurant)
-                  %>
-    </h2>
-    <p><%= restaurant.address %></p>
-    <p><%= restaurant.phone_number %></p>
-    <p><%= restaurant.category %></p>
-    <%= link_to "See all #{restaurant.reviews.count} review(s)",
-                 restaurant_reviews_path(restaurant)
-                 %>
-  <% end %>
+</nav>
+<div class="container cards">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <% @restaurants.each do |restaurant| %>
+      <%= render "shared/restaurant/card", restaurant: restaurant%>
+    <% end %>
+  </div>
 </div>
