@@ -1,4 +1,7 @@
 <div class="container">
-  <h1>Add new restaurant</h1>
+  <div class="mb-3">
+    <h1>Add new restaurant</h1>
+    <%= link_to "Back to Restaurants", restaurants_path, class: "link-unstyled" %>
+  </div>
   <%= render :partial => "shared/restaurant/form" %>
 </div>

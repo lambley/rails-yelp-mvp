@@ -1,0 +1,10 @@
+<% @restaurant.reviews.each do |review| %>
+  <div class="border-bottom d-flex">
+    <p class="me-3">
+      <%= int_to_stars(review.rating, Review.max_review_rating) %>
+    </p>
+    <p class="row">
+      <%= review.content %>
+    </p>
+  </div>
+<% end %>

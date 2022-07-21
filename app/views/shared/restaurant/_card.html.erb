@@ -3,7 +3,7 @@
     <img src=<%= "https://source.unsplash.com/random/297x180?sig=#{rand(1..100)}" %> class="card-img-top" alt="">
     <div class="card-body bg-light justify-content-between d-flex">
       <h5 class="card-title">
-        <%= link_to restaurant.name, restaurant_path(restaurant) %>
+        <%= link_to restaurant.name, restaurant_path(restaurant), class: "link-unstyled text-success" %>
       </h5>
       <p class="card-text">
         <%= restaurant.category.capitalize %>
@@ -12,7 +12,6 @@
     <div class="card-footer justify-content-between d-flex">
       <small class="text-muted">
         Average rating: <%= int_to_stars(restaurant.average_rating, Review.max_review_rating) %>
-        <%# Average rating: <%= int_to_stars(restaurant.average_rating, Review.validators_on(:rating).select.first.options[:in].last) %>
       </small>
       <small class="text-muted">
         <%= link_to "See all #{restaurant.reviews.count} review(s)", restaurant_reviews_path(restaurant) %>
