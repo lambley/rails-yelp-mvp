@@ -1,0 +1,13 @@
+<div class="container d-flex m-3">
+  <div class="card">
+    <img src=<%= "https://source.unsplash.com/random/150x150?sig=#{rand(1..100)}" %> class="restaurant-profile-img card-img-top" alt="">
+    <%= link_to "Back to Restaurants", restaurants_path, class: "link-unstyled card-footer" %>
+  </div>
+  <div class="ms-5 dflex">
+    <div class="row">
+      <h1><%= @restaurant.name %></h1>
+      <h3><%= int_to_stars(@restaurant.average_rating, Review.max_review_rating) %> (<%= @restaurant.reviews.count %>)<h3>
+    </div>
+    <h3 class="row"><%= @restaurant.address %> | <%= @restaurant.phone_number %></h3>
+  </div>
+</div>
