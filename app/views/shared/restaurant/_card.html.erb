@@ -1,6 +1,6 @@
 <div class="col">
   <div class="card m-3">
-    <img src=<%= "https://source.unsplash.com/random/297x180?sig=#{rand(1..100)}" %> class="card-img-top" alt="">
+    <%= image_tag "https://source.unsplash.com/random/297x180?sig=#{rand(1..100)}", alt: "unsplash", width: 300, height: 200, class: "card-img-top" %>
     <div class="card-body bg-light justify-content-between d-flex">
       <h5 class="card-title">
         <%= link_to restaurant.name, restaurant_path(restaurant), class: "link-unstyled text-success" %>
